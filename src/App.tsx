@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import GlobalStyles, { Container } from './App.css';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './utils/theme';
+import { appState } from './data/reducers/appReducer';
+import { AppState } from './data/store';
+import { useSelector } from 'react-redux';
+import { Layout, Task, Bored, Notes } from './container';
+import { Route, Switch } from 'react-router-dom';
 
-function App() {
+const App = (props: any) => {
+  const isMode = useSelector((state: AppState) => state.mode.isMode);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Fragment>
+        <GlobalStyles mode={isMode} />
+        <Container mode={isMode}>
+          <Layout mode={isMode}>
+            <Switch>
+              <Route path='/bored' exact component={Bored} />
+              <Route path='/notes' exact component={Notes} />
+              <Route path='/' exact component={Task} />
+            </Switch>
+          </Layout>
+        </Container>
+      </Fragment>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
