@@ -9,7 +9,6 @@ export const CustomButton = styled.button<{
   background: ${({ theme, bcColor }) =>
     bcColor ? bcColor : theme.colors.primary.normal};
   border: none;
-  border-radius: 4px;
   cursor: pointer;
   color: white;
   font-size: 1.6rem;
@@ -24,4 +23,12 @@ export const CustomButton = styled.button<{
   &:focus {
     outline: none;
   }
+`;
+
+export const SquareButton = styled(CustomButton)`
+  border-radius: 4px;
+`;
+
+export const CircleButton = styled(CustomButton)`
+  border-radius: 50%;
 `;

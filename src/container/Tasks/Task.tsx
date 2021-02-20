@@ -5,6 +5,7 @@ import { theme } from '../../utils/theme';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../../data/store';
 import { appAction, ActionTask } from '../../data/actions/appAction';
+import { Shape } from '../../helpers';
 
 interface Tasks {
   id: number;
@@ -99,6 +100,7 @@ const Task: FunctionComponent<any> = (props) => {
             value={insertValue}
           />
           <Button
+            variant={Shape.square}
             bcColor={theme.colors.primary.normal}
             bcColorHover={theme.colors.primary.dark}
             clicked={onAddTask}
@@ -127,7 +129,9 @@ const Task: FunctionComponent<any> = (props) => {
             closeTask={onCloseTask}
           />
         </div>
-        <Button clicked={onDeleteAllTask}>Clear all</Button>
+        <Button variant={Shape.square} clicked={onDeleteAllTask}>
+          Clear all
+        </Button>
       </div>
     </Container>
   );
