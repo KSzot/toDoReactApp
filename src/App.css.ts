@@ -16,6 +16,10 @@ html {
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
 
+  @media ${device.tablet} {
+    font-size: 50%;
+  }
+
 }
 
 body {
@@ -31,6 +35,10 @@ body {
 
     @media ${device.laptopL} {
       margin: 5rem 5rem 0 5rem;
+    }
+
+    @media ${device.mobileXL} {
+      margin: 1% 1% 0 1%;
     }
 }
 
@@ -61,4 +69,8 @@ export const Container = styled.div<{ mode: boolean }>`
   //background-color: ${({ theme }) => theme.colors.gray.normal};
   background-color: ${({ mode, theme }) =>
     mode ? theme.colors.blue.normal : theme.colors.gray.normal};
+
+  @media ${device.laptopL} {
+    flex-direction: column;
+  }
 `;

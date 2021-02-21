@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../utils/device';
 
 export const Container = styled.div<{ mode: boolean }>`
   display: flex;
@@ -25,6 +26,14 @@ export const Container = styled.div<{ mode: boolean }>`
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media ${device.tabletL} {
+        margin: 5% 0;
+      }
+      @media ${device.mobileL} {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
 
     &__img {
@@ -45,6 +54,9 @@ export const Container = styled.div<{ mode: boolean }>`
       align-items: center;
       margin-right: 20%;
       position: relative;
+      @media ${device.tabletL} {
+        margin: 0;
+      }
       &--text {
         margin-top: 5%;
         font-size: 2.6rem;

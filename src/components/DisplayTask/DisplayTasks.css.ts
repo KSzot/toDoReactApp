@@ -1,9 +1,14 @@
 import styled from 'styled-components';
+import { device } from '../../utils/device';
 
 export const Container = styled.div<{ mode: boolean }>`
   display: block;
   width: 35%;
   margin: 1rem;
+
+  @media ${device.mobileXL} {
+    width: 48%;
+  }
 
   & h2 {
     font-size: 2.4rem;

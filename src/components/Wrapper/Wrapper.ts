@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { device } from '../../utils/device';
 const Wrapper = styled.div<{ mode: boolean }>`
   display: flex;
   flex-direction: column;
@@ -23,6 +23,13 @@ const Wrapper = styled.div<{ mode: boolean }>`
     margin: 1rem;
     border-radius: 1rem;
     padding: 3rem 0;
+
+    @media ${device.tablet} {
+      position: fixed;
+      padding: 1rem 2rem;
+      bottom: 0;
+      width: 70%;
+    }
   }
 
   .layout-content {

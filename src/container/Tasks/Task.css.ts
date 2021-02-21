@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { device } from '../../utils/device';
 export const Container = styled.div<{ mode: boolean }>`
   display: flex;
   flex-direction: column;
@@ -12,10 +12,14 @@ export const Container = styled.div<{ mode: boolean }>`
     align-items: center;
     margin: 0 1rem;
 
+    @media ${device.mobileXL} {
+      flex-wrap: wrap;
+    }
     &--inputDiv {
       display: flex;
 
       & input {
+        display: block;
         padding: 1rem 2rem;
         border-radius: 4px;
         text-decoration: none;
@@ -23,10 +27,14 @@ export const Container = styled.div<{ mode: boolean }>`
         background-color: ${({ theme, mode }) =>
           mode ? theme.colors.blue.normal : theme.colors.gray.light};
         margin: 0 1rem;
-        width: 350px;
+        width: 35rem;
         font-size: 1.6rem;
         color: ${({ theme, mode }) =>
           mode ? `white` : theme.colors.gray.dark};
+
+        @media ${device.tabletL} {
+          width: 100%;
+        }
       }
       & input:focus {
         outline: none;
@@ -59,6 +67,16 @@ export const Container = styled.div<{ mode: boolean }>`
       justify-content: center;
       overflow-y: scroll;
       height: 30rem;
+
+      @media ${device.tabletL} {
+        justify-content: space-evenly;
+      }
+      @media ${device.mobileXL} {
+        justify-content: space-between;
+      }
+      @media ${device.mobileL} {
+        justify-content: center;
+      }
     }
   }
 `;

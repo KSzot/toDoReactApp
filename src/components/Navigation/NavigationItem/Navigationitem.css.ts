@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { device } from '../../../utils/device';
 export const WrapperLi = styled.li<{ bgColor: string; bgColorHover: string }>`
   & a {
     display: flex;

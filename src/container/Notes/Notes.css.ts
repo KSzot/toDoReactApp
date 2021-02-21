@@ -28,7 +28,7 @@ export const Container = styled.div<{ mode: boolean; lengthText: number }>`
         background-color: ${({ theme, mode }) =>
           mode ? theme.colors.blue.normal : theme.colors.gray.light};
         margin: 0 1rem;
-        width: 350px;
+        max-width: 35rem;
         font-size: 1.6rem;
         color: ${({ theme, mode }) =>
           mode ? `white` : theme.colors.gray.dark};
