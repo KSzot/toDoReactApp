@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState, useEffect } from 'react';
 import { Container } from './Task.css';
 import { Button, DisplayTasks } from '../../components';
 import { theme } from '../../utils/theme';
@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../../data/store';
 import { appAction, ActionTask } from '../../data/actions/appAction';
 import { Shape } from '../../helpers';
+import { keys, storeValue, getValue } from '../../data/localStorage';
 
 interface Tasks {
   id: number;

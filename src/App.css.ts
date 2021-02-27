@@ -73,4 +73,21 @@ export const Container = styled.div<{ mode: boolean }>`
   @media ${device.laptopL} {
     flex-direction: column;
   }
+
+  .container-right {
+    display: flex;
+    background-color: ${({ mode, theme }) =>
+      mode ? theme.colors.blue.light : `white`};
+    flex-direction: column;
+    flex-basis: 30%;
+    margin: 1rem;
+    border-radius: 1rem;
+    align-items: center;
+
+    &__topButton {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+    }
+  }
 `;

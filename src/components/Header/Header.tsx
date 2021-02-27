@@ -10,6 +10,7 @@ import { toggleMode } from '../../data/actions/appAction';
 import { useSelector, useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
+import { keys, storeValue } from '../../data/localStorage';
 //type Props = appState & LinkDispatchProps;
 
 const Header: FunctionComponent<any> = (props) => {
@@ -25,9 +26,10 @@ const Header: FunctionComponent<any> = (props) => {
   const currentDate = today.toLocaleDateString('en-US', options);
   const changeMode = () => {
     const modeState = isMode;
-    console.log(modeState);
+    console.log(!modeState);
     dispatch(toggleMode(!modeState));
   };
+  console.log(isMode);
   return (
     <Wrapper margin={true} padding={true} mode={isMode}>
       <Logo mode={isMode} />

@@ -1,6 +1,7 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 import { Container } from './DisplayTasks.css';
 import DisplayTask from './DisplayTask/DisplayTask';
+import { keys, storeValue } from '../../data/localStorage';
 interface DisplayTaskProps {
   mode: boolean;
   completed: boolean;
